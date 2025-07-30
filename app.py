@@ -6,7 +6,14 @@ import base64
 import os
 
 # Load the spaCy NLP model
-nlp = spacy.load("en_core_web_sm")
+import spacy
+try:
+    nlp = spacy.load("en_core_web_sm")
+except:
+    from spacy.cli import download
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
+
 
 st.set_page_config(page_title="AI Resume Evaluator", layout="wide")
 
