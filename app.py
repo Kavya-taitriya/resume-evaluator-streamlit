@@ -1,5 +1,4 @@
 import streamlit as st
-import spacy
 from PyPDF2 import PdfReader
 from io import BytesIO
 import base64
